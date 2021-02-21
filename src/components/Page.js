@@ -17,7 +17,7 @@ export class Page extends Component {
     }, 5000);
 
     axios
-      .get("http://api.icndb.com/jokes/random/10")
+      .get("https://api.icndb.com/jokes/random/10")
       .then((response) => {
         // console.log(response.data.value[0].id);
         let data = JSON.parse(localStorage.getItem("favo"));
@@ -43,7 +43,7 @@ export class Page extends Component {
     // console.log('hi');
     if (this.state.timer && this.state.favorites.length < 10) {
       axios
-        .get("http://api.icndb.com/jokes/random/1")
+        .get("https://api.icndb.com/jokes/random/1")
         .then((response) => {
           const j = this.state.favorites.findIndex(function (joke, index) {
             return joke.id === response.data.value[0].id;
